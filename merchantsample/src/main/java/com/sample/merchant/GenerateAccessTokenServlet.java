@@ -57,8 +57,8 @@ public class GenerateAccessTokenServlet extends HttpServlet {
 			tokenReq.setRequestEnvelope(env);
 			String text[] = request.getParameterValues("txtbox");
 			int i = 0;
-			tokenReq.setToken(text[i + 1]);
-			tokenReq.setVerifier(text[i]);
+			tokenReq.setToken(text[i]);
+			tokenReq.setVerifier(text[i + 1]);
 			GetAccessTokenResponse resp = service.getAccessToken(tokenReq);
 			response.getWriter()
 					.println(
